@@ -1,0 +1,115 @@
+<resources>
+    <string name="app_name">Hava Durumu</string>
+    <string name="cancel_label">İptal</string>
+    <string name="store_label">Mağaza</string>
+    <string name="license_title">Lisans</string>
+    <string name="libraries_title">Kütüphaneler ve Kaynaklar</string>
+    <string name="developer_info_title">Geliştirici Bilgisi</string>
+    <string name="design_api_title">Tasarım ve API</string>
+    <string name="application_info_title">Uygulama Bilgisi</string>
+    <string name="application_info_text">
+        <![CDATA[
+            <p>
+            <b>Hava Durumu uygulaması</b>
+            <br/>
+            Sürüm: %1$s
+            <br/>
+            Bu uygulama açık kaynaktır: <br/><a href="https://github.com/SALEKH7/Weather-App">https://github.com/SALEKH7/Weather-App</a></p>
+        ]]>
+    </string>
+    <string name="developer_info_text" translatable="false">
+        <![CDATA[
+            <p>Alakhiarov Salekh (SALEKH7)</p>
+        ]]>
+    </string>
+    <string name="design_api_text" translatable="false">
+        <![CDATA[
+            <p>
+            <a href="https://www.uplabs.com/posts/weather-app-freebie">Weather App Freebie</a> by Raman Yv
+            <br/>
+            <a href="https://lottiefiles.com/user/26177">Lottie & Icon files</a> by jochang
+            <br/>
+            <a href="http://openweathermap.org/">OpenWeatherMap</a> Weather API
+            </p>
+        ]]>
+    </string>
+    <string name="license_text" translatable="false">
+        <![CDATA[
+            <p>Copyright 2019 Alakhiarov Salekh</p>
+            <p>Licensed under the Apache License, Version 2.0 (the "License");
+            you may not use this file except in compliance with the License.
+            You may obtain a copy of the License at</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+            <p>Unless required by applicable law or agreed to in writing, software
+            distributed under the License is distributed on an "AS IS" BASIS,
+            WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+            See the License for the specific language governing permissions and
+            limitations under the License.</p>
+        ]]>
+    </string>
+    <string name="libraries_text" translatable="false">
+        <![CDATA[
+           <p>
+            <a href="https://github.com/JakeWharton/butterknife">ButterKnife</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/square/retrofit">Retrofit</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/ReactiveX/RxAndroid">RxAndroid</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/objectbox/objectbox-java">ObjectBox</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/mikepenz/FastAdapter">FastAdapter</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/bumptech/glide">Glide</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/airbnb/lottie-android">Lottie-Android</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/MiguelCatalan/MaterialSearchView">MaterialSearchView</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/pwittchen/prefser">Prefser</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/PhilJay/MPAndroidChart">MPAndroidChart</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/InflationX/Calligraphy">Calligraphy</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/google/material-design-icons">Material design icons</a> - Creative Common Attribution 4.0 International License
+           </p>
+
+        ]]>
+</string>
+    <string name="current_label">Şu anki</string>
+    <string name="humidity_label">Nem</string>
+    <string name="wind_label">Rüzgar</string>
+    <string name="next_4_days_hourly">Sonraki 4 Gün/Saatlik</string>
+    <string name="next_15_days_label">Sonraki 15 Gün</string>
+    <string name="search_for_a_city_label">Bir şehir arayın</string>
+    <string name="zero_label">0%d</string>
+    <string name="wind_unit_label">%.0f km/sa</string>
+    <string name="openweathermap_api_key_label">OpenWeatherMap API Anahtarı</string>
+    <string name="api_key_description">Uygulamayı kullanmak için bir API anahtarı sağlamalısınız. Ücretsizdir. Lütfen aşağıdaki bağlantıyı açın ve bir hesap oluşturun. Ardından API anahtarı alabilirsiniz.</string>
+    <string name="get_api_key_label">API Anahtarı Al</string>
+    <string name="api_key_label">API Anahtarı</string>
+    <string name="english_label" translatable="false">English</string>
+    <string name="persian_label" translatable="false">فارسی</string>
+    <string name="search_label">Ara</string>
+    <string name="no_internet_message">Lütfen internet bağlantısını kontrol edin</string>
+    <string name="no_city_found_message">Bu isimde bir şehir bulunamadı</string>
+    <string name="invalid_api_key_message">API anahtarı geçersiz. Bir sonraki güncellemeyi bekleyin</string>
+    <string name="network_exception_message">Ağ bağlantısı sorunu</string>
+    <string name="retry_label">Tekrar Dene</string>
+    <string name="ok_label">Tamam</string>
+    <string name="night_mode_label">Gece Modu</string>
+    <string name="weather_status_thunderstorm">Gök gürültülü fırtına</string>
+    <string name="weather_status_drizzle">Çisenti</string>
+    <string name="weather_status_rain">Yağmur</string>
+    <string name="weather_status_snow">Kar</string>
+    <string name="weather_status_atmosphere">Atmosfer</string>
+    <string name="weather_status_clear">Açık</string>
+    <string name="weather_status_few_clouds">Az bulutlu</string>
+    <string name="weather_status_broken_clouds">Parçalı bulutlu</string>
+    <string name="weather_status_clouds">Bulutlu</string>
+    <string name="label_pressure">Basınç</string>
+    <string name="label_visibility">Görünürlük</string>
+    <string name="label_uv_index">UV İndeksi</string>
+    <string name="label_dew_point">Çiy Noktası</string>
+</resources>

@@ -1,0 +1,115 @@
+<resources>
+    <string name="app_name">El Tiempo</string>
+    <string name="cancel_label">Cancelar</string>
+    <string name="store_label">Tienda</string>
+    <string name="license_title">Licencia</string>
+    <string name="libraries_title">Bibliotecas y Recursos</string>
+    <string name="developer_info_title">Información del Desarrollador</string>
+    <string name="design_api_title">Diseño y API</string>
+    <string name="application_info_title">Información de la Aplicación</string>
+    <string name="application_info_text">
+        <![CDATA[
+            <p>
+            <b>Aplicación de Tiempo</b>
+            <br/>
+            Versión: %1$s
+            <br/>
+            Esta aplicación es de código abierto en <br/><a href="https://github.com/SALEKH7/Weather-App">https://github.com/SALEKH7/Weather-App</a></p>
+        ]]>
+    </string>
+    <string name="developer_info_text" translatable="false">
+        <![CDATA[
+            <p>Alakhiarov Salekh (SALEKH7)</p>
+        ]]>
+    </string>
+    <string name="design_api_text" translatable="false">
+        <![CDATA[
+            <p>
+            <a href="https://www.uplabs.com/posts/weather-app-freebie">Weather App Freebie</a> by Raman Yv
+            <br/>
+            <a href="https://lottiefiles.com/user/26177">Lottie & Icon files</a> by jochang
+            <br/>
+            <a href="http://openweathermap.org/">OpenWeatherMap</a> Weather API
+            </p>
+        ]]>
+    </string>
+    <string name="license_text" translatable="false">
+        <![CDATA[
+            <p>Copyright 2019 Alakhiarov Salekh</p>
+            <p>Licensed under the Apache License, Version 2.0 (the "License");
+            you may not use this file except in compliance with the License.
+            You may obtain a copy of the License at</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+            <p>Unless required by applicable law or agreed to in writing, software
+            distributed under the License is distributed on an "AS IS" BASIS,
+            WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+            See the License for the specific language governing permissions and
+            limitations under the License.</p>
+        ]]>
+    </string>
+    <string name="libraries_text" translatable="false">
+        <![CDATA[
+           <p>
+            <a href="https://github.com/JakeWharton/butterknife">ButterKnife</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/square/retrofit">Retrofit</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/ReactiveX/RxAndroid">RxAndroid</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/objectbox/objectbox-java">ObjectBox</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/mikepenz/FastAdapter">FastAdapter</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/bumptech/glide">Glide</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/airbnb/lottie-android">Lottie-Android</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/MiguelCatalan/MaterialSearchView">MaterialSearchView</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/pwittchen/prefser">Prefser</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/PhilJay/MPAndroidChart">MPAndroidChart</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/InflationX/Calligraphy">Calligraphy</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/google/material-design-icons">Material design icons</a> - Creative Common Attribution 4.0 International License
+           </p>
+
+        ]]>
+</string>
+    <string name="current_label">Actual</string>
+    <string name="humidity_label">Humedad</string>
+    <string name="wind_label">Viento</string>
+    <string name="next_4_days_hourly">Próximos 4 días/Por hora</string>
+    <string name="next_15_days_label">Próximos 15 días</string>
+    <string name="search_for_a_city_label">Buscar una ciudad</string>
+    <string name="zero_label">0%d</string>
+    <string name="wind_unit_label">%.0f km/h</string>
+    <string name="openweathermap_api_key_label">Clave API de OpenWeatherMap</string>
+    <string name="api_key_description">Para usar la aplicación debes proporcionar una clave API. Es gratuita. Por favor, abre el enlace de abajo y crea una cuenta. Después de eso podrás obtener la clave API.</string>
+    <string name="get_api_key_label">Obtener clave API</string>
+    <string name="api_key_label">Clave API</string>
+    <string name="english_label" translatable="false">English</string>
+    <string name="persian_label" translatable="false">فارسی</string>
+    <string name="search_label">Buscar</string>
+    <string name="no_internet_message">Por favor, comprueba la conexión a internet</string>
+    <string name="no_city_found_message">No se ha encontrado ninguna ciudad con este nombre</string>
+    <string name="invalid_api_key_message">La clave API no es válida. Espera a la próxima actualización</string>
+    <string name="network_exception_message">Problema de conexión de red</string>
+    <string name="retry_label">Reintentar</string>
+    <string name="ok_label">Aceptar</string>
+    <string name="night_mode_label">Modo Noche</string>
+    <string name="weather_status_thunderstorm">Tormenta</string>
+    <string name="weather_status_drizzle">Llovizna</string>
+    <string name="weather_status_rain">Lluvia</string>
+    <string name="weather_status_snow">Nieve</string>
+    <string name="weather_status_atmosphere">Atmósfera</string>
+    <string name="weather_status_clear">Despejado</string>
+    <string name="weather_status_few_clouds">Nubes dispersas</string>
+    <string name="weather_status_broken_clouds">Nuboso</string>
+    <string name="weather_status_clouds">Nubes</string>
+    <string name="label_pressure">Presión</string>
+    <string name="label_visibility">Visibilidad</string>
+    <string name="label_uv_index">Índice UV</string>
+    <string name="label_dew_point">Punto de rocío</string>
+</resources>

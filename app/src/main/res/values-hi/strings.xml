@@ -1,0 +1,115 @@
+<resources>
+    <string name="app_name">मौसम</string>
+    <string name="cancel_label">रद्द करें</string>
+    <string name="store_label">स्टोर</string>
+    <string name="license_title">लाइसेंस</string>
+    <string name="libraries_title">लाइब्रेरी और संसाधन</string>
+    <string name="developer_info_title">डेवलपर जानकारी</string>
+    <string name="design_api_title">डिज़ाइन और API</string>
+    <string name="application_info_title">एप्लिकेशन जानकारी</string>
+    <string name="application_info_text">
+        <![CDATA[
+            <p>
+            <b>मौसम एप्लिकेशन</b>
+            <br/>
+            संस्करण: %1$s
+            <br/>
+            यह एप्लिकेशन यहाँ ओपन सोर्स है: <br/><a href="https://github.com/SALEKH7/Weather-App">https://github.com/SALEKH7/Weather-App</a></p>
+        ]]>
+    </string>
+    <string name="developer_info_text" translatable="false">
+        <![CDATA[
+            <p>Alakhiarov Salekh (SALEKH7)</p>
+        ]]>
+    </string>
+    <string name="design_api_text" translatable="false">
+        <![CDATA[
+            <p>
+            <a href="https://www.uplabs.com/posts/weather-app-freebie">Weather App Freebie</a> by Raman Yv
+            <br/>
+            <a href="https://lottiefiles.com/user/26177">Lottie & Icon files</a> by jochang
+            <br/>
+            <a href="http://openweathermap.org/">OpenWeatherMap</a> Weather API
+            </p>
+        ]]>
+    </string>
+    <string name="license_text" translatable="false">
+        <![CDATA[
+            <p>Copyright 2019 Alakhiarov Salekh</p>
+            <p>Licensed under the Apache License, Version 2.0 (the "License");
+            you may not use this file except in compliance with the License.
+            You may obtain a copy of the License at</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+            <p>Unless required by applicable law or agreed to in writing, software
+            distributed under the License is distributed on an "AS IS" BASIS,
+            WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+            See the License for the specific language governing permissions and
+            limitations under the License.</p>
+        ]]>
+    </string>
+    <string name="libraries_text" translatable="false">
+        <![CDATA[
+           <p>
+            <a href="https://github.com/JakeWharton/butterknife">ButterKnife</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/square/retrofit">Retrofit</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/ReactiveX/RxAndroid">RxAndroid</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/objectbox/objectbox-java">ObjectBox</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/mikepenz/FastAdapter">FastAdapter</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/bumptech/glide">Glide</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/airbnb/lottie-android">Lottie-Android</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/MiguelCatalan/MaterialSearchView">MaterialSearchView</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/pwittchen/prefser">Prefser</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/PhilJay/MPAndroidChart">MPAndroidChart</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/InflationX/Calligraphy">Calligraphy</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/google/material-design-icons">Material design icons</a> - Creative Common Attribution 4.0 International License
+           </p>
+
+        ]]>
+</string>
+    <string name="current_label">वर्तमान</string>
+    <string name="humidity_label">आर्द्रता</string>
+    <string name="wind_label">हवा</string>
+    <string name="next_4_days_hourly">अगले 4 दिन/प्रति घंटा</string>
+    <string name="next_15_days_label">अगले 15 दिन</string>
+    <string name="search_for_a_city_label">शहर खोजें</string>
+    <string name="zero_label">0%d</string>
+    <string name="wind_unit_label">%.0f किमी/घंटा</string>
+    <string name="openweathermap_api_key_label">OpenWeatherMap API कुंजी</string>
+    <string name="api_key_description">एप्लिकेशन का उपयोग करने के लिए आपको API कुंजी प्रदान करनी होगी। यह मुफ़्त है। कृपया नीचे दिए गए लिंक को खोलें और एक खाता बनाएं। उसके बाद आप API कुंजी प्राप्त कर सकते हैं।</string>
+    <string name="get_api_key_label">API कुंजी प्राप्त करें</string>
+    <string name="api_key_label">API कुंजी</string>
+    <string name="english_label" translatable="false">English</string>
+    <string name="persian_label" translatable="false">فارسی</string>
+    <string name="search_label">खोजें</string>
+    <string name="no_internet_message">कृपया इंटरनेट कनेक्शन जांचें</string>
+    <string name="no_city_found_message">इस नाम का कोई शहर नहीं मिला</string>
+    <string name="invalid_api_key_message">API कुंजी अमान्य है। अगले अपडेट की प्रतीक्षा करें</string>
+    <string name="network_exception_message">नेटवर्क कनेक्शन की समस्या</string>
+    <string name="retry_label">पुन: प्रयास करें</string>
+    <string name="ok_label">ठीक है</string>
+    <string name="night_mode_label">नाइट मोड</string>
+    <string name="weather_status_thunderstorm">गरज के साथ आंधी</string>
+    <string name="weather_status_drizzle">बूंदा बांदी</string>
+    <string name="weather_status_rain">बारिश</string>
+    <string name="weather_status_snow">बर्फ</string>
+    <string name="weather_status_atmosphere">वातावरण</string>
+    <string name="weather_status_clear">साफ़</string>
+    <string name="weather_status_few_clouds">थोड़े बादल</string>
+    <string name="weather_status_broken_clouds">छितराए हुए बादल</string>
+    <string name="weather_status_clouds">बादल</string>
+    <string name="label_pressure">दबाव</string>
+    <string name="label_visibility">दृश्यता</string>
+    <string name="label_uv_index">यूवी सूचकांक</string>
+    <string name="label_dew_point">ओस बिंदु</string>
+</resources>

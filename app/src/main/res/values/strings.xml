@@ -1,0 +1,124 @@
+<resources>
+    <string name="app_name">Weather</string>
+    <string name="cancel_label">Cancel</string>
+    <string name="store_label">Store</string>
+    <string name="license_title">License</string>
+    <string name="libraries_title">Libraries &amp; Resources</string>
+    <string name="developer_info_title">Developer Info</string>
+    <string name="design_api_title">Design &amp; API</string>
+    <string name="application_info_title">Application Info</string>
+    <string name="application_info_text">
+        <![CDATA[
+            <p>
+            <b>Weather application</b>
+            <br/>
+            Version: %1$s
+            <br/>
+            This application is open source at <br/><a href="https://github.com/SALEKH7/Weather-App">https://github.com/SALEKH7/Weather-App</a></p>
+        ]]>
+    </string>
+    <string name="developer_info_text" translatable="false">
+        <![CDATA[
+            <p>Alakhiarov Salekh (SALEKH7)</p>
+        ]]>
+    </string>
+    <string name="design_api_text" translatable="false">
+        <![CDATA[
+            <p>
+            <a href="https://www.uplabs.com/posts/weather-app-freebie">Weather App Freebie</a> by Raman Yv
+            <br/>
+            <a href="https://lottiefiles.com/user/26177">Lottie & Icon files</a> by jochang
+            <br/>
+            <a href="http://openweathermap.org/">OpenWeatherMap</a> Weather API
+            </p>
+        ]]>
+    </string>
+    <string name="license_text" translatable="false">
+        <![CDATA[
+            <p>Copyright 2019 Alakhiarov Salekh</p>
+            <p>Licensed under the Apache License, Version 2.0 (the "License");
+            you may not use this file except in compliance with the License.
+            You may obtain a copy of the License at</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
+            <p>Unless required by applicable law or agreed to in writing, software
+            distributed under the License is distributed on an "AS IS" BASIS,
+            WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+            See the License for the specific language governing permissions and
+            limitations under the License.</p>
+        ]]>
+    </string>
+    <string name="libraries_text" translatable="false">
+        <![CDATA[
+           <p>
+            <a href="https://github.com/JakeWharton/butterknife">ButterKnife</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/square/retrofit">Retrofit</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/ReactiveX/RxAndroid">RxAndroid</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/objectbox/objectbox-java">ObjectBox</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/mikepenz/FastAdapter">FastAdapter</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/bumptech/glide">Glide</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/airbnb/lottie-android">Lottie-Android</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/MiguelCatalan/MaterialSearchView">MaterialSearchView</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/pwittchen/prefser">Prefser</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/PhilJay/MPAndroidChart">MPAndroidChart</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/InflationX/Calligraphy">Calligraphy</a> - Apache-2.0
+            <br/>
+            <a href="https://github.com/google/material-design-icons">Material design icons</a> - Creative Common Attribution 4.0 International License
+           </p>
+
+        ]]>
+</string>
+    <string name="current_label">Current</string>
+    <string name="humidity_label">Humidity</string>
+    <string name="wind_label">Wind</string>
+    <string name="next_4_days_hourly">Next 4 Days/Hourly</string>
+    <string name="next_15_days_label">Next 15 Days</string>
+    <string name="search_for_a_city_label">Search for a city</string>
+    <string name="zero_label">0%d</string>
+    <string name="wind_unit_label">%.0f km/hr</string>
+    <string name="openweathermap_api_key_label">OpenWeatherMap API Key</string>
+    <string name="api_key_description">For using application you should provide API key. It is free. Please open link below and create account. After that you can get API key.</string>
+    <string name="get_api_key_label">Get API Key</string>
+    <string name="api_key_label">API Key</string>
+    <string name="english_label" translatable="false">English</string>
+    <string name="persian_label" translatable="false">فارسی</string>
+    <string name="spanish_label" translatable="false">Español</string>
+    <string name="french_label" translatable="false">Français</string>
+    <string name="arabic_label" translatable="false">العربية</string>
+    <string name="chinese_label" translatable="false">中文</string>
+    <string name="hindi_label" translatable="false">हिन्दी</string>
+    <string name="georgian_label" translatable="false">ქართული</string>
+    <string name="azerbaijan_label" translatable="false">Azərbaycan</string>
+    <string name="turkish_label" translatable="false">Türkçe</string>
+    <string name="select_language_label">Select Language</string>
+    <string name="search_label">Search</string>
+    <string name="no_internet_message">Please check internet connection</string>
+    <string name="no_city_found_message">No city found with this name</string>
+    <string name="invalid_api_key_message">API key is invalid. Wait for next update</string>
+    <string name="network_exception_message">Network connection problem</string>
+    <string name="retry_label">Retry</string>
+    <string name="ok_label">OK</string>
+    <string name="night_mode_label">Night Mode</string>
+    <string name="weather_status_thunderstorm">Thunderstorm</string>
+    <string name="weather_status_drizzle">Drizzle</string>
+    <string name="weather_status_rain">Rain</string>
+    <string name="weather_status_snow">Snow</string>
+    <string name="weather_status_atmosphere">Atmosphere</string>
+    <string name="weather_status_clear">Clear</string>
+    <string name="weather_status_few_clouds">Few Clouds</string>
+    <string name="weather_status_broken_clouds">Broken Clouds</string>
+    <string name="weather_status_clouds">Cloud</string>
+    <string name="label_pressure">Pressure</string>
+    <string name="label_visibility">Visibility</string>
+    <string name="label_uv_index">UV Index</string>
+    <string name="label_dew_point">Dew Point</string>
+</resources>
