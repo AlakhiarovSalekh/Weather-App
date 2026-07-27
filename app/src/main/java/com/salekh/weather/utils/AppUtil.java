@@ -101,32 +101,63 @@ public class AppUtil {
   }
 
   /**
-   * Set icon to imageView according to weather code status
+   * Set icon to imageView according to weather code status (WMO Codes)
    *
    * @param context     instance of {@link Context}
    * @param imageView   instance of {@link android.widget.ImageView}
-   * @param weatherCode code of weather status
+   * @param weatherCode WMO weather code
    */
   public static void setWeatherIcon(Context context, AppCompatImageView imageView, int weatherCode) {
-    if (weatherCode / 100 == 2) {
-      Glide.with(context).load(R.drawable.ic_storm_weather).into(imageView);
-    } else if (weatherCode / 100 == 3) {
-      Glide.with(context).load(R.drawable.ic_rainy_weather).into(imageView);
-    } else if (weatherCode / 100 == 5) {
-      Glide.with(context).load(R.drawable.ic_rainy_weather).into(imageView);
-    } else if (weatherCode / 100 == 6) {
-      Glide.with(context).load(R.drawable.ic_snow_weather).into(imageView);
-    } else if (weatherCode / 100 == 7) {
-      Glide.with(context).load(R.drawable.ic_unknown).into(imageView);
-    } else if (weatherCode == 800) {
-      Glide.with(context).load(R.drawable.ic_clear_day).into(imageView);
-    } else if (weatherCode == 801) {
-      Glide.with(context).load(R.drawable.ic_few_clouds).into(imageView);
-    } else if (weatherCode == 803) {
-      Glide.with(context).load(R.drawable.ic_broken_clouds).into(imageView);
-    } else if (weatherCode / 100 == 8) {
-      Glide.with(context).load(R.drawable.ic_cloudy_weather).into(imageView);
+    int icon;
+    switch (weatherCode) {
+      case 0:
+        icon = R.drawable.ic_clear_day;
+        break;
+      case 1:
+      case 2:
+        icon = R.drawable.ic_few_clouds;
+        break;
+      case 3:
+        icon = R.drawable.ic_cloudy_weather;
+        break;
+      case 45:
+      case 48:
+        icon = R.drawable.ic_unknown; // Fog
+        break;
+      case 51:
+      case 53:
+      case 55:
+      case 56:
+      case 57:
+        icon = R.drawable.ic_rainy_weather; // Drizzle
+        break;
+      case 61:
+      case 63:
+      case 65:
+      case 66:
+      case 67:
+      case 80:
+      case 81:
+      case 82:
+        icon = R.drawable.ic_rainy_weather;
+        break;
+      case 71:
+      case 73:
+      case 75:
+      case 77:
+      case 85:
+      case 86:
+        icon = R.drawable.ic_snow_weather;
+        break;
+      case 95:
+      case 96:
+      case 99:
+        icon = R.drawable.ic_storm_weather;
+        break;
+      default:
+        icon = R.drawable.ic_unknown;
     }
+    Glide.with(context).load(icon).into(imageView);
   }
 
   /**
@@ -172,62 +203,88 @@ public class AppUtil {
   }
 
   /**
-   * Get animation file according to weather status code
+   * Get animation file according to weather status code (WMO Codes)
    *
-   * @param weatherCode int weather status code
+   * @param weatherCode int WMO weather status code
    * @return id of animation json file
    */
   public static int getWeatherAnimation(int weatherCode) {
-    if (weatherCode / 100 == 2) {
-      return R.raw.storm_weather;
-    } else if (weatherCode / 100 == 3) {
-      return R.raw.rainy_weather;
-    } else if (weatherCode / 100 == 5) {
-      return R.raw.rainy_weather;
-    } else if (weatherCode / 100 == 6) {
-      return R.raw.snow_weather;
-    } else if (weatherCode / 100 == 7) {
-      return R.raw.unknown;
-    } else if (weatherCode == 800) {
-      return R.raw.clear_day;
-    } else if (weatherCode == 801) {
-      return R.raw.few_clouds;
-    } else if (weatherCode == 803) {
-      return R.raw.broken_clouds;
-    } else if (weatherCode / 100 == 8) {
-      return R.raw.cloudy_weather;
+    switch (weatherCode) {
+      case 0:
+        return R.raw.clear_day;
+      case 1:
+      case 2:
+        return R.raw.few_clouds;
+      case 3:
+        return R.raw.cloudy_weather;
+      case 45:
+      case 48:
+        return R.raw.unknown;
+      case 51:
+      case 53:
+      case 55:
+        return R.raw.rainy_weather;
+      case 61:
+      case 63:
+      case 65:
+      case 80:
+      case 81:
+      case 82:
+        return R.raw.rainy_weather;
+      case 71:
+      case 73:
+      case 75:
+        return R.raw.snow_weather;
+      case 95:
+      case 96:
+      case 99:
+        return R.raw.storm_weather;
+      default:
+        return R.raw.unknown;
     }
-    return R.raw.unknown;
   }
 
   /**
-   * Get weather status string according to weather status code
+   * Get weather status string according to weather status code (WMO Codes)
    *
    * @param context     instance of {@link Context}
-   * @param weatherCode weather status code
+   * @param weatherCode WMO weather status code
    * @return String weather status
    */
   public static String getWeatherStatus(Context context, int weatherCode) {
-    if (weatherCode / 100 == 2) {
-      return context.getString(R.string.weather_status_thunderstorm);
-    } else if (weatherCode / 100 == 3) {
-      return context.getString(R.string.weather_status_drizzle);
-    } else if (weatherCode / 100 == 5) {
-      return context.getString(R.string.weather_status_rain);
-    } else if (weatherCode / 100 == 6) {
-      return context.getString(R.string.weather_status_snow);
-    } else if (weatherCode / 100 == 7) {
-      return context.getString(R.string.weather_status_atmosphere);
-    } else if (weatherCode == 800) {
-      return context.getString(R.string.weather_status_clear);
-    } else if (weatherCode == 801) {
-      return context.getString(R.string.weather_status_few_clouds);
-    } else if (weatherCode == 803) {
-      return context.getString(R.string.weather_status_broken_clouds);
-    } else if (weatherCode / 100 == 8) {
-      return context.getString(R.string.weather_status_clouds);
+    switch (weatherCode) {
+      case 0:
+        return context.getString(R.string.weather_status_clear);
+      case 1:
+      case 2:
+        return context.getString(R.string.weather_status_few_clouds);
+      case 3:
+        return context.getString(R.string.weather_status_clouds);
+      case 45:
+      case 48:
+        return context.getString(R.string.weather_status_atmosphere);
+      case 51:
+      case 53:
+      case 55:
+        return context.getString(R.string.weather_status_drizzle);
+      case 61:
+      case 63:
+      case 65:
+      case 80:
+      case 81:
+      case 82:
+        return context.getString(R.string.weather_status_rain);
+      case 71:
+      case 73:
+      case 75:
+        return context.getString(R.string.weather_status_snow);
+      case 95:
+      case 96:
+      case 99:
+        return context.getString(R.string.weather_status_thunderstorm);
+      default:
+        return context.getString(R.string.weather_status_atmosphere);
     }
-    return context.getString(R.string.weather_status_atmosphere);
   }
 
   /**

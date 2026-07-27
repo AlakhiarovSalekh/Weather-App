@@ -1,64 +1,32 @@
 package com.salekh.weather.data.remote;
 
-import com.salekh.weather.data.model.currentweather.CurrentWeatherResponse;
-import com.salekh.weather.data.model.daysweather.MultipleDaysWeatherResponse;
-import com.salekh.weather.data.model.fivedayweather.FiveDayResponse;
+import com.salekh.weather.data.model.remote.GeocodingResponse;
+import com.salekh.weather.data.model.remote.WeatherResponse;
 
 import io.reactivex.Single;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
+import retrofit2.http.Url;
 
 public interface ApiService {
 
-  /**
-   * Get current weather of city
-   *
-   * @param q     String name of city
-   * @param units String units of response
-   * @param lang  String language of response
-   * @param appId String api key
-   * @return instance of {@link CurrentWeatherResponse}
-   */
-  @GET("weather")
-  Single<CurrentWeatherResponse> getCurrentWeather(
-      @Query("q") String q,
-      @Query("units") String units,
-      @Query("lang") String lang,
-      @Query("appid") String appId
+  @GET
+  Single<GeocodingResponse> searchCity(
+      @Url String url,
+      @Query("name") String cityName,
+      @Query("count") int count,
+      @Query("language") String lang,
+      @Query("format") String format
   );
 
-  /**
-   * Get five days weather forecast.
-   *
-   * @param q     String name of city
-   * @param units String units of response
-   * @param lang  String language of response
-   * @param appId String api key
-   * @return instance of {@link FiveDayResponse}
-   */
-  @GET("forecast")
-  Single<FiveDayResponse> getFiveDaysWeather(
-      @Query("q") String q,
-      @Query("units") String units,
-      @Query("lang") String lang,
-      @Query("appid") String appId
-  );
-
-  /**
-   * Get multiple days weather
-   *
-   * @param q     String name of city
-   * @param units String units of response
-   * @param lang  String language of response
-   * @param appId String api key
-   * @return instance of {@link MultipleDaysWeatherResponse}
-   */
-  @GET("forecast/daily")
-  Single<MultipleDaysWeatherResponse> getMultipleDaysWeather(
-      @Query("q") String q,
-      @Query("units") String units,
-      @Query("lang") String lang,
-      @Query("cnt") int dayCount,
-      @Query("appid") String appId
+  @GET
+  Single<WeatherResponse> getForecast(
+      @Url String url,
+      @Query("latitude") double lat,
+      @Query("longitude") double lon,
+      @Query("current") String currentVars,
+      @Query("daily") String dailyVars,
+      @Query("timezone") String timezone,
+      @Query("forecast_days") int days
   );
 }

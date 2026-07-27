@@ -124,6 +124,9 @@ public class MultipleDaysFragment extends DialogFragment {
   private void showStoredMultipleDaysWeather() {
     Query<MultipleDaysWeather> query = DbUtil.getMultipleDaysWeatherQuery(multipleDaysWeatherBox);
     query.subscribe().on(AndroidScheduler.mainThread())
+        .onError(error -> {
+            Log.e("MultipleDaysFragment", "DB Error: " + error.getMessage());
+        })
         .observer(new DataObserver<List<MultipleDaysWeather>>() {
           @Override
           public void onData(@NonNull List<MultipleDaysWeather> data) {

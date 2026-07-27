@@ -43,9 +43,16 @@ public class MyApplication extends Application {
   }
 
   private void createBoxStore() {
-    boxStore = MyObjectBox.builder().androidContext(MyApplication.this).build();
-    if (BuildConfig.DEBUG) {
-      new AndroidObjectBrowser(boxStore).start(this);
+    try {
+        boxStore = MyObjectBox.builder()
+                .androidContext(MyApplication.this)
+                .name("weather_v3")
+                .build();
+        if (BuildConfig.DEBUG) {
+            new AndroidObjectBrowser(boxStore).start(this);
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
     }
   }
 

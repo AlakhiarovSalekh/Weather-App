@@ -2,14 +2,12 @@ package com.salekh.weather.presentation.main;
 
 import android.Manifest;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.view.WindowCompat;
 import androidx.lifecycle.ViewModelProvider;
@@ -21,30 +19,26 @@ import com.salekh.weather.data.model.CityInfo;
 import com.salekh.weather.data.model.currentweather.CurrentWeatherResponse;
 import com.salekh.weather.data.model.db.CurrentWeather;
 import com.salekh.weather.data.model.db.FiveDayWeather;
-import com.salekh.weather.data.model.db.ItemHourlyDB;
-import com.salekh.weather.data.model.fivedayweather.FiveDayResponse;
 import com.salekh.weather.databinding.ActivityMainBinding;
 import com.salekh.weather.presentation.about.AboutFragment;
 import com.salekh.weather.presentation.base.BaseActivity;
 import com.salekh.weather.presentation.forecast.MultipleDaysFragment;
+import com.salekh.weather.utils.TextViewFactory;
 import com.salekh.weather.utils.AppUtil;
 import com.salekh.weather.utils.Constants;
 import com.salekh.weather.utils.DbUtil;
 import com.salekh.weather.utils.MyApplication;
+import com.salekh.weather.utils.MockUtil;
 import com.github.pwittchen.prefser.library.rx2.Prefser;
 import com.mikepenz.fastadapter.FastAdapter;
-import com.mikepenz.fastadapter.IAdapter;
 import com.mikepenz.fastadapter.adapters.ItemAdapter;
-import com.mikepenz.fastadapter.listeners.OnClickListener;
 
-import java.util.List;
 import java.util.Locale;
 
 import io.objectbox.Box;
 import io.objectbox.BoxStore;
 import io.objectbox.android.AndroidScheduler;
 import io.objectbox.query.Query;
-import io.objectbox.reactive.DataObserver;
 import io.objectbox.reactive.DataSubscriptionList;
 import io.reactivex.disposables.CompositeDisposable;
 
@@ -73,6 +67,7 @@ public class MainActivity extends BaseActivity {
         
         initDatabase();
         initViews();
+        setupTextSwitchers();
         setupObservers();
         initRecyclerView();
         
@@ -93,6 +88,7 @@ public class MainActivity extends BaseActivity {
     private void initViews() {
         // M3 Search Setup
         binding.searchView.setupWithSearchBar(binding.searchBar);
+        binding.searchBar.setOnClickListener(v -> binding.searchView.show());
 
         // SearchBar Menu -> About & Search
         binding.searchBar.setNavigationOnClickListener(v -> AppUtil.showFragment(new AboutFragment(), getSupportFragmentManager(), true));
@@ -106,13 +102,16 @@ public class MainActivity extends BaseActivity {
 
         // Search Logic inside SearchView
         binding.searchView.getEditText().setOnEditorActionListener((v, actionId, event) -> {
-            String query = binding.searchView.getText().toString();
-            if (!query.isEmpty()) {
-                binding.searchBar.setText(query);
-                binding.searchView.hide();
-                viewModel.searchCity(query);
+            if (actionId == EditorInfo.IME_ACTION_SEARCH || actionId == EditorInfo.IME_NULL) {
+                String query = binding.searchView.getText().toString();
+                if (!query.isEmpty()) {
+                    binding.searchBar.setText(query);
+                    binding.searchView.hide();
+                    viewModel.searchCity(query);
+                }
+                return true;
             }
-            return true;
+            return false;
         });
 
         binding.nextDaysButton.setOnClickListener(v -> {
@@ -127,10 +126,22 @@ public class MainActivity extends BaseActivity {
                 binding.swipeContainer.setRefreshing(false);
             }
         });
+    }
 
-        binding.nextDaysButton.setOnClickListener(v -> {
-            AppUtil.showFragment(new MultipleDaysFragment(), getSupportFragmentManager(), true);
-        });
+    private void setupTextSwitchers() {
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Vazir.ttf");
+        binding.contentMainLayout.tempTextView.setFactory(new TextViewFactory(MainActivity.this, R.style.TempTextView, true, typeface));
+        binding.contentMainLayout.tempTextView.setInAnimation(MainActivity.this, R.anim.slide_in_right);
+        binding.contentMainLayout.tempTextView.setOutAnimation(MainActivity.this, R.anim.slide_out_left);
+        binding.contentMainLayout.descriptionTextView.setFactory(new TextViewFactory(MainActivity.this, R.style.DescriptionTextView, true, typeface));
+        binding.contentMainLayout.descriptionTextView.setInAnimation(MainActivity.this, R.anim.slide_in_right);
+        binding.contentMainLayout.descriptionTextView.setOutAnimation(MainActivity.this, R.anim.slide_out_left);
+        binding.contentMainLayout.humidityTextView.setFactory(new TextViewFactory(MainActivity.this, R.style.HumidityTextView, false, typeface));
+        binding.contentMainLayout.humidityTextView.setInAnimation(MainActivity.this, R.anim.slide_in_bottom);
+        binding.contentMainLayout.humidityTextView.setOutAnimation(MainActivity.this, R.anim.slide_out_top);
+        binding.contentMainLayout.windTextView.setFactory(new TextViewFactory(MainActivity.this, R.style.WindSpeedTextView, false, typeface));
+        binding.contentMainLayout.windTextView.setInAnimation(MainActivity.this, R.anim.slide_in_bottom);
+        binding.contentMainLayout.windTextView.setOutAnimation(MainActivity.this, R.anim.slide_out_top);
     }
 
     private void setupObservers() {
@@ -171,30 +182,29 @@ public class MainActivity extends BaseActivity {
     private void showStoredData() {
         Query<CurrentWeather> query = DbUtil.getCurrentWeatherQuery(currentWeatherBox);
         query.subscribe(subscriptions).on(AndroidScheduler.mainThread())
-                .onError(error -> {
-                    Toast.makeText(this, "DB Error: " + error.getMessage(), Toast.LENGTH_LONG).show();
-                    error.printStackTrace();
-                })
+                .onError(Throwable::printStackTrace)
                 .observer(data -> {
-                    if (data.size() > 0) {
+                    if (data != null && data.size() > 0) {
                         CurrentWeather currentWeather = data.get(0);
-                        binding.contentMainLayout.tempTextView.setCurrentText(String.format(Locale.getDefault(), "%.0f°", currentWeather.getTemp()));
-                        binding.contentMainLayout.descriptionTextView.setCurrentText(AppUtil.getWeatherStatus(MainActivity.this, currentWeather.getWeatherId()));
-                        binding.contentMainLayout.humidityTextView.setCurrentText(String.format(Locale.getDefault(), "%d%%", currentWeather.getHumidity()));
-                        binding.contentMainLayout.windTextView.setCurrentText(String.format(Locale.getDefault(), getString(R.string.wind_unit_label), currentWeather.getWindSpeed()));
-                        binding.contentMainLayout.pressureTextView.setText(String.format(Locale.getDefault(), "%d hPa", 1012)); // Mocked
-                        binding.contentMainLayout.visibilityTextView.setText("10 km");
-                        
-                        updateBackground(currentWeather.getWeatherId());
-                        binding.contentMainLayout.animationView.setAnimation(AppUtil.getWeatherAnimation(currentWeather.getWeatherId()));
-                        binding.contentMainLayout.animationView.playAnimation();
+                        binding.getRoot().post(() -> {
+                            binding.contentMainLayout.tempTextView.setCurrentText(String.format(Locale.getDefault(), "%.0f°", currentWeather.getTemp()));
+                            binding.contentMainLayout.descriptionTextView.setCurrentText(AppUtil.getWeatherStatus(MainActivity.this, currentWeather.getWeatherId()));
+                            binding.contentMainLayout.humidityTextView.setCurrentText(String.format(Locale.getDefault(), "%d%%", currentWeather.getHumidity()));
+                            binding.contentMainLayout.windTextView.setCurrentText(String.format(Locale.getDefault(), getString(R.string.wind_unit_label), currentWeather.getWindSpeed()));
+                            binding.contentMainLayout.pressureTextView.setText(String.format(Locale.getDefault(), "%d hPa", 1012));
+                            binding.contentMainLayout.visibilityTextView.setText("10 km");
+                            
+                            updateBackground(currentWeather.getWeatherId());
+                            binding.contentMainLayout.animationView.setAnimation(AppUtil.getWeatherAnimation(currentWeather.getWeatherId()));
+                            binding.contentMainLayout.animationView.playAnimation();
+                        });
                     }
                 });
 
         Query<FiveDayWeather> forecastQuery = DbUtil.getFiveDayWeatherQuery(fiveDayWeatherBox);
         forecastQuery.subscribe(subscriptions).on(AndroidScheduler.mainThread())
                 .onError(error -> {
-                    Toast.makeText(this, "Forecast DB Error: " + error.getMessage(), Toast.LENGTH_LONG).show();
+                    error.printStackTrace();
                 })
                 .observer(data -> {
                     if (data.size() > 0) {
@@ -206,18 +216,20 @@ public class MainActivity extends BaseActivity {
     }
 
     private void updateUI(CurrentWeatherResponse response) {
-        binding.contentMainLayout.cityNameDisplay.setText(String.format("%s, %s", response.getName(), response.getSys().getCountry()));
-        binding.contentMainLayout.tempTextView.setText(String.format(Locale.getDefault(), "%.0f°", response.getMain().getTemp()));
-        binding.contentMainLayout.descriptionTextView.setText(AppUtil.getWeatherStatus(this, response.getWeather().get(0).getId()));
-        binding.contentMainLayout.humidityTextView.setText(String.format(Locale.getDefault(), "%d%%", response.getMain().getHumidity()));
-        binding.contentMainLayout.windTextView.setText(String.format(Locale.getDefault(), getString(R.string.wind_unit_label), response.getWind().getSpeed()));
-        binding.contentMainLayout.pressureTextView.setText(String.format(Locale.getDefault(), "%.0f hPa", response.getMain().getPressure()));
-        
-        updateBackground(response.getWeather().get(0).getId());
-        binding.contentMainLayout.animationView.setAnimation(AppUtil.getWeatherAnimation(response.getWeather().get(0).getId()));
-        binding.contentMainLayout.animationView.playAnimation();
-        
-        animateEntrance();
+        binding.getRoot().post(() -> {
+            binding.contentMainLayout.cityNameDisplay.setText(String.format("%s, %s", response.getName(), response.getSys().getCountry()));
+            binding.contentMainLayout.tempTextView.setText(String.format(Locale.getDefault(), "%.0f°", response.getMain().getTemp()));
+            binding.contentMainLayout.descriptionTextView.setText(AppUtil.getWeatherStatus(this, response.getWeather().get(0).getId()));
+            binding.contentMainLayout.humidityTextView.setText(String.format(Locale.getDefault(), "%d%%", response.getMain().getHumidity()));
+            binding.contentMainLayout.windTextView.setText(String.format(Locale.getDefault(), getString(R.string.wind_unit_label), response.getWind().getSpeed()));
+            binding.contentMainLayout.pressureTextView.setText(String.format(Locale.getDefault(), "%.0f hPa", response.getMain().getPressure()));
+            
+            updateBackground(response.getWeather().get(0).getId());
+            binding.contentMainLayout.animationView.setAnimation(AppUtil.getWeatherAnimation(response.getWeather().get(0).getId()));
+            binding.contentMainLayout.animationView.playAnimation();
+            
+            animateEntrance();
+        });
     }
 
     private void updateBackground(int weatherId) {
@@ -267,7 +279,9 @@ public class MainActivity extends BaseActivity {
     }
 
     private void getNotificationPermission() {
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.POST_NOTIFICATIONS}, PERMISSION_REQUEST_CODE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.POST_NOTIFICATIONS}, PERMISSION_REQUEST_CODE);
+        }
     }
 
     @Override

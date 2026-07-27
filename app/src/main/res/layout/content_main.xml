@@ -20,18 +20,23 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
-            android:paddingTop="40dp"
-            android:paddingBottom="20dp"
+            android:paddingTop="80dp"
+            android:paddingBottom="40dp"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/city_name_display"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?attr/textAppearanceHeadlineMedium"
+                android:textAppearance="?attr/textAppearanceHeadlineLarge"
                 android:textColor="@android:color/white"
                 android:textStyle="bold"
+                android:shadowColor="#40000000"
+                android:shadowDx="0"
+                android:shadowDy="4"
+                android:shadowRadius="8"
                 tools:text="London, UK" />
+
 
             <TextSwitcher
                 android:id="@+id/temp_text_view"
@@ -47,8 +52,8 @@
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/animation_view"
-                android:layout_width="240dp"
-                android:layout_height="240dp"
+                android:layout_width="260dp"
+                android:layout_height="260dp"
                 android:layout_marginTop="8dp"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true" />
@@ -72,14 +77,11 @@
 
                 <!-- Humidity -->
                 <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.Material3.CardView.Elevated"
+                    style="@style/Material3CardGlass"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_margin="8dp"
-                    app:cardBackgroundColor="@color/glass_white"
-                    app:cardCornerRadius="24dp"
-                    app:strokeWidth="0dp">
+                    android:layout_margin="8dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -106,14 +108,11 @@
 
                 <!-- Wind -->
                 <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.Material3.CardView.Elevated"
+                    style="@style/Material3CardGlass"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_margin="8dp"
-                    app:cardBackgroundColor="@color/glass_white"
-                    app:cardCornerRadius="24dp"
-                    app:strokeWidth="0dp">
+                    android:layout_margin="8dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -147,14 +146,11 @@
 
                 <!-- Pressure -->
                 <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.Material3.CardView.Elevated"
+                    style="@style/Material3CardGlass"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_margin="8dp"
-                    app:cardBackgroundColor="@color/glass_white"
-                    app:cardCornerRadius="24dp"
-                    app:strokeWidth="0dp">
+                    android:layout_margin="8dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -178,20 +174,18 @@
                             android:layout_marginTop="8dp"
                             android:textAppearance="?attr/textAppearanceTitleLarge"
                             android:textColor="@android:color/white"
+                            android:textStyle="bold"
                             tools:text="1012 hPa" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
                 <!-- Visibility -->
                 <com.google.android.material.card.MaterialCardView
-                    style="@style/Widget.Material3.CardView.Elevated"
+                    style="@style/Material3CardGlass"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_margin="8dp"
-                    app:cardBackgroundColor="@color/glass_white"
-                    app:cardCornerRadius="24dp"
-                    app:strokeWidth="0dp">
+                    android:layout_margin="8dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -215,6 +209,7 @@
                             android:layout_marginTop="8dp"
                             android:textAppearance="?attr/textAppearanceTitleLarge"
                             android:textColor="@android:color/white"
+                            android:textStyle="bold"
                             tools:text="10 km" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
