@@ -75,4 +75,4 @@
 [MaterialSearchView]: https://github.com/MiguelCatalan/MaterialSearchView
 [MPAndroidChart]: https://github.com/PhilJay/MPAndroidChart
 [Firebase Core]: https://firebase.google.com/
-[Release]: https://github.com/SALEKH7/Weather-App/releases
+[Release]: https://github.com/AlakhiarovSalekh/Weather-App/releases
