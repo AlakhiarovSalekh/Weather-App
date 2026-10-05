@@ -71,6 +71,12 @@ The interface was inspired by the [Weather App Freebie](https://www.uplabs.com/p
 
 Focused bug fixes, documentation improvements, dependency maintenance, and UI/accessibility improvements are welcome through pull requests.
 
+## More Projects by Salekh
+
+- [Notes App](https://github.com/AlakhiarovSalekh/Notes-App) — Kotlin, Jetpack Compose, Room, Hilt, and Clean Architecture.
+- [Lector](https://github.com/AlakhiarovSalekh/Lector) — private offline Android document reader with text-to-speech.
+- [Android Kotlin Bluetooth Chat App](https://github.com/AlakhiarovSalekh/Android-Kotlin-Bluetooth-Chat-App) — Bluetooth device-to-device chat.
+
 ## Author
 
 **Salekh Alakhiarov** · [GitHub](https://github.com/AlakhiarovSalekh)
