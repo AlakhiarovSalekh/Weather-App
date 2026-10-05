@@ -1,78 +1,80 @@
-# Weather app
+# Weather App
 
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Weather%20App-brightgreen.svg?style=flat)](https://android-arsenal.com/details/3/7678)
+[![Android](https://img.shields.io/badge/Android-API%2021%2B-3DDC84?logo=android&logoColor=white)](https://developer.android.com/)
+[![Java](https://img.shields.io/badge/Platform-Android-blue)](https://developer.android.com/)
+[![License](https://img.shields.io/github/license/AlakhiarovSalekh/Weather-App)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/AlakhiarovSalekh/Weather-App?style=social)](https://github.com/AlakhiarovSalekh/Weather-App/stargazers)
 
-<p align="center"><img src="assets/screenshot-1.png" /></p>
+A native Android weather application using OpenWeatherMap data, Material Design components, local persistence, dark mode, charts, search, and multilingual UI.
 
-**Requirements**
-- Android studio last version
+<p align="center">
+  <img src="assets/screenshot-1.png" alt="Weather App preview" />
+</p>
+
+## Highlights
+
+- OpenWeatherMap API integration
+- Material Design 2 interface
+- Dark mode
+- English and Persian language support
+- Local database support
+- Weather charts and visualizations
+- Search experience
+- Android API level 21+
+- Release build available from the repository releases page
+
+## Screenshots
+
+<p align="center">
+  <img src="assets/screenshot-2.png" alt="Weather App screenshot" />
+</p>
+
+## Requirements
+
+- Android Studio
 - JDK 17
 - Android SDK 34
-- Supports API Level +21
-- Material Components 1.12.0
+- Android API level 21 or newer
 
-**Highlights**
-- Use [OpenWeatherMap] API
-- Use Material Design 2
-- Dark Mode
-- Support two language. English & Persian
-- Use locale Database
+## Tech Stack
 
-**Demo** application is available in [Release]
+- AndroidX: AppCompat, RecyclerView, ConstraintLayout
+- Material Components
+- Retrofit, OkHttp, Logging Interceptor
+- ObjectBox
+- RxAndroid
+- Glide
+- Lottie Android
+- MaterialSearchView
+- MPAndroidChart
+- Firebase / Crashlytics
 
-**Screenshot**
+## Getting Started
 
-<p align="center"><img src="assets/screenshot-2.png" /></p>
+Clone the repository:
 
-**Libraries & Dependencies**
-- [Support libraries]: appcompat / recyclerview / constraintlayout
-- [Material Design 2]: MaterialCardView / MaterialButton / Bottom App Bars / ExtendedFloatingActionButton
-- [FastAdapter]: The bullet proof, fast and easy to use adapter library, which minimizes developing time to a fraction
-- [Calligraphy3]: Custom fonts in Android the easy way
-- Square [Retrofit] / [Okhttp] / [Logging-Interceptor]
-- [ObjextBox]: ObjectBox is a superfast lightweight database for objects
-- [RxAndroid] Reactive Extensions for Android
-- [Glide]: An image loading and caching library for Android focused on smooth scrolling
-- [Lottie-Android]: Render After Effects animations natively on Android
-- [MaterialSearchView]: Cute library to implement SearchView in a Material Design Approach
-- [MPAndroidChart]: A powerful & easy to use chart library for Android
-- [Firebase Core] / Crashlytics
+```bash
+git clone https://github.com/AlakhiarovSalekh/Weather-App.git
+```
 
-**Credit**
+Open the project in Android Studio, let Gradle resolve dependencies, configure the weather API credentials expected by the project, and run it on an emulator or Android device.
 
-### This app inspired from [Weather App Freebie] concept Designed by [Raman Yv] 
+## Release
 
-# License
+Prebuilt releases, when available, are published under [GitHub Releases](https://github.com/AlakhiarovSalekh/Weather-App/releases).
 
-    Copyright 2019 Alakhiarov Salekh
+## Design Credit
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+The interface was inspired by the [Weather App Freebie](https://www.uplabs.com/posts/weather-app-freebie) concept by [Raman Yv](https://www.uplabs.com/ramandesigns9).
 
-       http://www.apache.org/licenses/LICENSE-2.0
+## Contributing
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
-    
-[Weather App Freebie]: https://www.uplabs.com/posts/weather-app-freebie    
-[Raman Yv]: https://www.uplabs.com/ramandesigns9    
-[OpenWeatherMap]: https://openweathermap.org/
-[Support libraries]: https://developer.android.com/jetpack/androidx/
-[Material Design 2]: https://material.io/develop/android/
-[FastAdapter]: https://github.com/mikepenz/FastAdapter
-[Calligraphy3]: https://github.com/InflationX/Calligraphy
-[Retrofit]: https://github.com/square/retrofit
-[Okhttp]: https://github.com/square/okhttp
-[Logging-Interceptor]: https://github.com/square/okhttp/tree/master/okhttp-logging-interceptor
-[ObjextBox]: https://github.com/objectbox/objectbox-java
-[RxAndroid]: https://github.com/ReactiveX/RxAndroid
-[Glide]: https://github.com/bumptech/glide
-[Lottie-Android]: https://github.com/airbnb/lottie-android
-[MaterialSearchView]: https://github.com/MiguelCatalan/MaterialSearchView
-[MPAndroidChart]: https://github.com/PhilJay/MPAndroidChart
-[Firebase Core]: https://firebase.google.com/
-[Release]: https://github.com/AlakhiarovSalekh/Weather-App/releases
+Focused bug fixes, documentation improvements, dependency maintenance, and UI/accessibility improvements are welcome through pull requests.
+
+## Author
+
+**Salekh Alakhiarov** · [GitHub](https://github.com/AlakhiarovSalekh)
+
+## License
+
+Licensed under the Apache License 2.0. See [LICENSE](LICENSE).
