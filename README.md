@@ -71,6 +71,8 @@ The interface was inspired by the [Weather App Freebie](https://www.uplabs.com/p
 
 Focused bug fixes, documentation improvements, dependency maintenance, and UI/accessibility improvements are welcome through pull requests.
 
+> If this project is useful to you, consider starring the repository. It helps you find it again and helps other developers discover the project.
+
 ## More Projects by Salekh
 
 - [Notes App](https://github.com/AlakhiarovSalekh/Notes-App) — Kotlin, Jetpack Compose, Room, Hilt, and Clean Architecture.
