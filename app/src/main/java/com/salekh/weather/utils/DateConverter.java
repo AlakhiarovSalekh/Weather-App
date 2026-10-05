@@ -75,7 +75,7 @@ public class DateConverter {
    * ('irYear').Iranian year (irYear) ranges from (-61 to 3177).This method
    * will set the following private data members as follows: leap: Number of
    * years since the last leap year (0 to 4) Gy: Gregorian year of the
-   * begining of Iranian year march: The March day of Farvardin the 1st (first
+   * beginning of Iranian year march: The March day of Farvardin the 1st (first
    * day of jaYear)
    */
   private void IranianCalendar() {
@@ -98,7 +98,7 @@ public class DateConverter {
       j++;
     } while ((j < 20) && (irYear >= jm));
     N = irYear - jp;
-    // Find the number of leap years from AD 621 to the begining of the
+    // Find the number of leap years from AD 621 to the beginning of the
     // current
     // Iranian year in the Iranian (Jalali) calendar
     leapJ += (N / 33 * 8 + ((N % 33) + 3) / 4);
@@ -122,7 +122,7 @@ public class DateConverter {
    * ('irYear').Iranian year (irYear) ranges from (-61 to 3177).This method
    * will set the following private data members as follows: leap: Number of
    * years since the last leap year (0 to 4) Gy: Gregorian year of the
-   * begining of Iranian year march: The March day of Farvardin the 1st (first
+   * beginning of Iranian year march: The March day of Farvardin the 1st (first
    * day of jaYear)
    */
   public boolean IsLeap(int irYear1) {
@@ -145,7 +145,7 @@ public class DateConverter {
       j++;
     } while ((j < 20) && (irYear1 >= jm));
     N = irYear1 - jp;
-    // Find the number of leap years from AD 621 to the begining of the
+    // Find the number of leap years from AD 621 to the beginning of the
     // current
     // Iranian year in the Iranian (Jalali) calendar
     leapJ += (N / 33 * 8 + ((N % 33) + 3) / 4);
