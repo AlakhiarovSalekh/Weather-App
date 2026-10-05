@@ -1,4 +1,4 @@
-# Weather App
+# Android Weather App — OpenWeatherMap, Material Design & Offline Data
 
 [![Android](https://img.shields.io/badge/Android-API%2021%2B-3DDC84?logo=android&logoColor=white)](https://developer.android.com/)
 [![Java](https://img.shields.io/badge/Platform-Android-blue)](https://developer.android.com/)
